@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useRoute } from "wouter";
-import { Menu, X, Heart } from "lucide-react";
+import { Menu, X, Heart, Leaf } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
@@ -10,6 +10,25 @@ const NAV_LINKS = [
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
 ];
+
+function NavLink({ href, label }: { href: string; label: string }) {
+  const [isActive] = useRoute(href);
+  return (
+    <li>
+      <Link
+        href={href}
+        className={cn(
+          "text-sm font-semibold transition-colors hover:text-primary",
+          isActive
+            ? "text-primary relative after:absolute after:bottom-[-3px] after:left-0 after:w-full after:h-[2.5px] after:rounded-full after:bg-primary"
+            : "text-foreground/80"
+        )}
+      >
+        {label}
+      </Link>
+    </li>
+  );
+}
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -21,28 +40,34 @@ export function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Close mobile menu on route change
-  useEffect(() => {
-    setIsOpen(false);
-  }, []);
-
   return (
     <header
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-        isScrolled ? "glass-header py-3" : "bg-transparent py-5"
+        isScrolled
+          ? "bg-white/95 backdrop-blur-md shadow-sm border-b border-border py-3"
+          : "bg-transparent py-5"
       )}
     >
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
+        {/* Logo */}
         <Link href="/" onClick={() => setIsOpen(false)} className="flex items-center gap-3 group">
-          <div className="flex items-center justify-center w-10 h-10 rounded-full bg-primary text-primary-foreground shadow-sm group-hover:scale-105 transition-transform">
-            <span className="font-serif font-bold text-lg leading-none">DC</span>
+          <div className="relative flex items-center justify-center w-10 h-10">
+            {/* Outer ring */}
+            <div className="absolute inset-0 rounded-full border-2 border-primary/30 group-hover:border-primary/60 transition-colors" />
+            {/* Inner circle */}
+            <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center shadow-sm group-hover:scale-105 transition-transform">
+              <Leaf className="w-4 h-4 text-white" strokeWidth={2.5} />
+            </div>
           </div>
-          <div className="flex flex-col">
-            <span className="font-serif font-bold text-xl leading-none text-foreground">
+          <div className="flex flex-col leading-none">
+            <span className={cn(
+              "font-serif font-bold text-[1.1rem] transition-colors",
+              isScrolled ? "text-foreground" : "text-foreground"
+            )}>
               Dreams Compassion
             </span>
-            <span className="text-[10px] uppercase tracking-wider text-muted-foreground font-medium mt-1">
+            <span className="text-[10px] uppercase tracking-widest text-muted-foreground font-medium mt-0.5">
               Support delivered with dignity
             </span>
           </div>
@@ -50,27 +75,14 @@ export function Header() {
 
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-8">
-          <ul className="flex items-center gap-6">
-            {NAV_LINKS.map((link) => {
-              const [isActive] = useRoute(link.href);
-              return (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className={cn(
-                      "text-sm font-medium transition-colors hover:text-primary",
-                      isActive ? "text-primary border-b-2 border-primary pb-1" : "text-foreground"
-                    )}
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              );
-            })}
+          <ul className="flex items-center gap-6 relative">
+            {NAV_LINKS.map((link) => (
+              <NavLink key={link.href} href={link.href} label={link.label} />
+            ))}
           </ul>
           <Link href="/donate">
-            <Button className="gap-2">
-              <Heart className="w-4 h-4" />
+            <Button className="gap-2 rounded-full px-5">
+              <Heart className="w-3.5 h-3.5" fill="currentColor" />
               Donate
             </Button>
           </Link>
@@ -78,7 +90,7 @@ export function Header() {
 
         {/* Mobile Menu Toggle */}
         <button
-          className="md:hidden p-2 text-foreground"
+          className="md:hidden p-2 text-foreground rounded-lg hover:bg-foreground/5"
           onClick={() => setIsOpen(!isOpen)}
           aria-label="Toggle menu"
         >
@@ -86,26 +98,26 @@ export function Header() {
         </button>
       </div>
 
-      {/* Mobile Nav Overlay */}
+      {/* Mobile Nav */}
       {isOpen && (
-        <div className="absolute top-full left-0 right-0 bg-background/95 backdrop-blur-xl border-b border-border shadow-lg p-4 flex flex-col gap-4 md:hidden">
-          <ul className="flex flex-col gap-2">
+        <div className="absolute top-full left-0 right-0 bg-white/98 backdrop-blur-xl border-b border-border shadow-lg p-4 flex flex-col gap-4 md:hidden">
+          <ul className="flex flex-col gap-1">
             {NAV_LINKS.map((link) => (
               <li key={link.href}>
                 <Link
                   href={link.href}
                   onClick={() => setIsOpen(false)}
-                  className="block px-4 py-3 text-lg font-medium text-foreground hover:bg-primary/5 rounded-xl transition-colors"
+                  className="block px-4 py-3 text-base font-semibold text-foreground hover:bg-primary/5 hover:text-primary rounded-xl transition-colors"
                 >
                   {link.label}
                 </Link>
               </li>
             ))}
           </ul>
-          <div className="px-4 pb-4 pt-2">
+          <div className="px-4 pb-2">
             <Link href="/donate" onClick={() => setIsOpen(false)}>
-              <Button className="w-full gap-2" size="lg">
-                <Heart className="w-5 h-5" />
+              <Button className="w-full gap-2 rounded-full" size="lg">
+                <Heart className="w-4 h-4" fill="currentColor" />
                 Donate Now
               </Button>
             </Link>

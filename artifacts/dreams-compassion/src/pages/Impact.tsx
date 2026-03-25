@@ -1,82 +1,130 @@
-import { HandHeart, Target, BarChart3, ArrowRight } from "lucide-react";
+import { Link } from "wouter";
+import { HandHeart, Target, BarChart3, ArrowRight, Quote } from "lucide-react";
 import { PageHeader } from "@/components/ui/PageHeader";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { FadeIn } from "@/components/ui/FadeIn";
+import { Button } from "@/components/ui/button";
 
 export function Impact() {
   return (
-    <div className="flex flex-col w-full bg-background">
-      <PageHeader 
-        title="Support that reaches people—fast, safely, and respectfully." 
-        subtitle="We measure our success not just by the amount of resources we distribute, but by the dignity and care with which they are delivered."
+    <div className="flex flex-col w-full">
+      <PageHeader
+        eyebrow="Impact"
+        title="Support that reaches people—fast, safely, and respectfully."
+        subtitle="Direct assistance through trusted partners—fast and respectful."
+        image="https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?q=80&w=1600&auto=format&fit=crop"
+        imageAlt="Community members receiving support"
       />
 
-      {/* Highlights */}
-      <section className="py-16 -mt-16 relative z-20">
+      {/* Highlight cards */}
+      <section className="py-16 bg-background">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="grid md:grid-cols-3 gap-6">
-            <FadeIn delay={0.1}>
-              <Card className="h-full shadow-lg border-none">
-                <CardHeader>
-                  <HandHeart className="w-8 h-8 text-secondary mb-2" />
-                  <CardTitle>Dignity-first support</CardTitle>
-                </CardHeader>
-                <CardContent className="text-muted-foreground">
-                  We believe receiving help shouldn't cost you your pride. Our outreach is designed to be discreet, respectful, and empowering.
-                </CardContent>
-              </Card>
+          <div className="grid md:grid-cols-3 gap-6 -mt-12 relative z-10">
+            {[
+              {
+                icon: HandHeart,
+                title: "Dignity-first support",
+                desc: "We prioritize safety, privacy, and respect for every person.",
+                color: "bg-emerald-50 border-emerald-100 text-emerald-700"
+              },
+              {
+                icon: Target,
+                title: "Partner-led delivery",
+                desc: "Trusted local groups deliver help faster and more safely.",
+                color: "bg-amber-50 border-amber-100 text-amber-700"
+              },
+              {
+                icon: BarChart3,
+                title: "Clear updates",
+                desc: "Simple reporting on what was delivered and where.",
+                color: "bg-blue-50 border-blue-100 text-blue-700"
+              }
+            ].map((card, i) => {
+              const Icon = card.icon;
+              return (
+                <FadeIn key={i} delay={i * 0.1}>
+                  <div className="bg-white rounded-2xl border border-border shadow-md p-8 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 h-full">
+                    <div className={`w-12 h-12 rounded-xl border flex items-center justify-center mb-5 ${card.color}`}>
+                      <Icon className="w-6 h-6" />
+                    </div>
+                    <h3 className="text-xl font-bold font-serif text-foreground mb-3">{card.title}</h3>
+                    <p className="text-muted-foreground">{card.desc}</p>
+                  </div>
+                </FadeIn>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* How impact happens */}
+      <section id="model" className="py-20 md:py-28">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <FadeIn>
+              <span className="uppercase tracking-widest text-secondary font-bold text-xs mb-4 block">Model</span>
+              <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground mb-5">How impact happens</h2>
+              <p className="text-lg text-muted-foreground mb-10">
+                A simple process designed for speed, safety, and coordination.
+              </p>
+
+              <div className="space-y-6">
+                {[
+                  { num: "1", title: "Identify needs", desc: "We listen to partners and communities to understand urgent needs and gaps." },
+                  { num: "2", title: "Coordinate support", desc: "We align resources with trusted local groups to reduce duplication and increase reach." },
+                  { num: "3", title: "Deliver resources", desc: "Food, shelter support, and care referrals delivered with dignity and privacy." },
+                  { num: "4", title: "Follow up & report", desc: "We document outcomes and share updates to build accountability and trust." },
+                ].map((step, i) => (
+                  <div key={i} className="flex gap-5 items-start">
+                    <div className="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center font-bold font-serif shrink-0 shadow-sm text-sm">
+                      {step.num}
+                    </div>
+                    <div className="pt-1">
+                      <h4 className="font-bold text-foreground mb-1">{step.title}</h4>
+                      <p className="text-muted-foreground text-sm">{step.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </FadeIn>
-            <FadeIn delay={0.2}>
-              <Card className="h-full shadow-lg border-none">
-                <CardHeader>
-                  <Target className="w-8 h-8 text-secondary mb-2" />
-                  <CardTitle>Partner-led delivery</CardTitle>
-                </CardHeader>
-                <CardContent className="text-muted-foreground">
-                  We don't guess what communities need. We listen to local leaders and channel resources through organizations already trusted on the ground.
-                </CardContent>
-              </Card>
-            </FadeIn>
-            <FadeIn delay={0.3}>
-              <Card className="h-full shadow-lg border-none">
-                <CardHeader>
-                  <BarChart3 className="w-8 h-8 text-secondary mb-2" />
-                  <CardTitle>Clear updates</CardTitle>
-                </CardHeader>
-                <CardContent className="text-muted-foreground">
-                  Transparency is non-negotiable. We track where every dollar goes and report back on the tangible impact it made.
-                </CardContent>
-              </Card>
+
+            <FadeIn delay={0.2} className="relative">
+              <div className="rounded-3xl overflow-hidden shadow-2xl aspect-[3/4]">
+                <img
+                  src="https://images.unsplash.com/photo-1593113598332-cd288d649433?q=80&w=900&auto=format&fit=crop"
+                  alt="Volunteers coordinating food distribution"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/70 via-transparent to-transparent" />
+              </div>
             </FadeIn>
           </div>
         </div>
       </section>
 
-      {/* Timeline Section */}
-      <section id="model" className="py-20 md:py-32">
+      {/* Accountability */}
+      <section id="accountability" className="py-20 md:py-28 bg-background-alt border-y border-border">
         <div className="container mx-auto px-4 md:px-6">
-          <FadeIn>
-            <div className="text-center max-w-2xl mx-auto mb-16">
-              <span className="uppercase tracking-widest text-secondary font-bold text-sm mb-4 block">The Process</span>
-              <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground">How impact happens</h2>
-            </div>
+          <FadeIn className="text-center mb-14">
+            <span className="uppercase tracking-widest text-secondary font-bold text-xs mb-3 block">Accountability</span>
+            <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground">Transparency builds trust.</h2>
+            <p className="text-lg text-muted-foreground mt-3 max-w-xl mx-auto">
+              We share plain-language updates on what we did, who we partnered with, and what was delivered.
+            </p>
           </FadeIn>
 
-          <div className="max-w-4xl mx-auto">
+          <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
             {[
-              { num: "01", title: "Identify needs", desc: "Local partners signal urgent gaps in their communities—whether it's a food shortage or a need for winter gear." },
-              { num: "02", title: "Coordinate support", desc: "We mobilize resources, purchase supplies in bulk, or organize specific drives to meet the exact request." },
-              { num: "03", title: "Deliver resources", desc: "Goods are delivered directly to the partner organization, ensuring they are distributed in a familiar, safe environment." },
-              { num: "04", title: "Follow up & report", desc: "We track the distribution and share stories of impact with our donors, respecting the privacy of recipients." }
-            ].map((step, index) => (
-              <FadeIn key={index} delay={index * 0.1} className="relative flex gap-8 pb-12 last:pb-0">
-                {index !== 3 && <div className="absolute top-12 left-6 w-0.5 h-full bg-border -z-10" />}
-                <div className="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center font-bold font-serif text-lg shrink-0 shadow-md">
-                  {step.num}
-                </div>
-                <div className="pt-2">
-                  <h3 className="text-2xl font-serif font-bold text-foreground mb-3">{step.title}</h3>
-                  <p className="text-lg text-muted-foreground">{step.desc}</p>
+              { title: "Clear updates", desc: "What was delivered, where, and through which partners." },
+              { title: "Privacy and dignity", desc: "We protect sensitive details about the people we support." },
+              { title: "Donor intent", desc: "We align support to the program you care about when possible." },
+            ].map((card, i) => (
+              <FadeIn key={i} delay={i * 0.1}>
+                <div className="bg-white p-8 rounded-2xl shadow-sm border border-border text-center hover:shadow-md hover:-translate-y-1 transition-all duration-300">
+                  <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-5">
+                    <span className="text-primary font-bold">{i + 1}</span>
+                  </div>
+                  <h3 className="text-lg font-bold font-serif text-foreground mb-3">{card.title}</h3>
+                  <p className="text-muted-foreground text-sm">{card.desc}</p>
                 </div>
               </FadeIn>
             ))}
@@ -84,51 +132,75 @@ export function Impact() {
         </div>
       </section>
 
-      {/* Accountability */}
-      <section id="accountability" className="py-24 bg-background-alt">
+      {/* Partners */}
+      <section id="partners" className="py-20 md:py-28">
         <div className="container mx-auto px-4 md:px-6">
-          <FadeIn>
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-center mb-16">Accountability to you and them</h2>
-          </FadeIn>
-          <div className="grid md:grid-cols-3 gap-8">
-            <FadeIn delay={0.1} className="bg-white p-8 rounded-2xl shadow-sm">
-              <h3 className="text-xl font-bold font-serif mb-4 text-primary">Clear updates</h3>
-              <p className="text-muted-foreground">You'll always know exactly how your contribution was utilized through regular, honest reporting.</p>
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <FadeIn>
+              <span className="uppercase tracking-widest text-secondary font-bold text-xs mb-4 block">Partners</span>
+              <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground mb-5">We go further together.</h2>
+              <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
+                We work with organizations and community leaders with local knowledge and trusted relationships.
+              </p>
+              <ul className="space-y-3 mb-10">
+                {[
+                  "Community organizations and mutual aid groups",
+                  "Church and local outreach networks",
+                  "Social service and case management partners",
+                  "Health and counseling referral networks",
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start gap-3 text-foreground">
+                    <span className="w-5 h-5 rounded-full bg-secondary/20 text-secondary flex items-center justify-center text-xs font-bold mt-0.5 shrink-0">✓</span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <Link href="/donate">
+                <Button size="lg" className="gap-2 rounded-full px-8">
+                  Support our work <ArrowRight className="w-4 h-4" />
+                </Button>
+              </Link>
             </FadeIn>
-            <FadeIn delay={0.2} className="bg-white p-8 rounded-2xl shadow-sm">
-              <h3 className="text-xl font-bold font-serif mb-4 text-primary">Privacy and dignity</h3>
-              <p className="text-muted-foreground">We protect the identities of those we serve. We share impact data, not exploitative imagery.</p>
-            </FadeIn>
-            <FadeIn delay={0.3} className="bg-white p-8 rounded-2xl shadow-sm">
-              <h3 className="text-xl font-bold font-serif mb-4 text-primary">Donor intent</h3>
-              <p className="text-muted-foreground">When you restrict your gift to a specific program, 100% of it honors that commitment.</p>
+
+            <FadeIn delay={0.2}>
+              <div className="relative">
+                <div className="rounded-3xl overflow-hidden shadow-xl aspect-square">
+                  <img
+                    src="https://images.unsplash.com/photo-1542810634-71277d95dcbb?q=80&w=900&auto=format&fit=crop"
+                    alt="Community partnership and collaboration"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                {/* Quote card */}
+                <div className="absolute -bottom-6 -left-6 bg-primary text-white p-6 rounded-2xl shadow-xl max-w-xs">
+                  <Quote className="w-6 h-6 text-secondary mb-3 opacity-80" />
+                  <p className="font-serif text-sm leading-relaxed italic">
+                    "Compassion becomes sustainable when communities lead and partners coordinate."
+                  </p>
+                  <p className="text-xs text-white/70 mt-3 font-medium">Dreams Compassion</p>
+                </div>
+              </div>
             </FadeIn>
           </div>
         </div>
       </section>
 
-      {/* Partners */}
-      <section id="partners" className="py-24">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <FadeIn>
-              <h2 className="text-3xl md:text-4xl font-serif font-bold mb-6">Our strength is our network</h2>
-              <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                We don't build parallel systems. Instead, we channel resources into existing community infrastructures: mutual aid groups, local churches, social service agencies, and health clinics.
-              </p>
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                By doing this, we eliminate redundant overhead and ensure that help is provided by neighbors who already know and love their communities.
-              </p>
-            </FadeIn>
-            <FadeIn delay={0.2}>
-              <div className="bg-primary text-white p-10 rounded-3xl relative">
-                <span className="absolute -top-6 -left-6 text-6xl text-secondary opacity-50 font-serif">"</span>
-                <p className="text-2xl font-serif font-medium leading-tight relative z-10 italic">
-                  Compassion becomes sustainable when communities lead and partners coordinate.
-                </p>
-              </div>
-            </FadeIn>
-          </div>
+      {/* CTA */}
+      <section className="py-20 bg-background-alt border-t border-border">
+        <div className="container mx-auto px-4 md:px-6 text-center max-w-2xl">
+          <FadeIn>
+            <span className="uppercase tracking-widest text-secondary font-bold text-xs mb-4 block">Support</span>
+            <h2 className="text-3xl font-serif font-bold text-foreground mb-4">Your support fuels direct action.</h2>
+            <p className="text-lg text-muted-foreground mb-8">Make a donation or connect with us to explore partnerships.</p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link href="/donate">
+                <Button size="lg" className="px-8 rounded-full">Donate</Button>
+              </Link>
+              <Link href="/contact">
+                <Button size="lg" variant="outline" className="px-8 rounded-full">Contact</Button>
+              </Link>
+            </div>
+          </FadeIn>
         </div>
       </section>
     </div>

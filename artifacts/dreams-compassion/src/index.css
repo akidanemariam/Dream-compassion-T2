@@ -43,39 +43,41 @@
 }
 
 :root {
-  --background: 34 40% 95%; /* warm beige */
-  --background-alt: 34 30% 90%; /* slightly deeper warm */
-  --foreground: 140 22% 14%; /* near-black green-charcoal */
-  
+  /* Fresh, clean off-white with a subtle warm tone — feels airy and modern */
+  --background: 45 30% 97%;
+  --background-alt: 155 12% 94%;
+
+  --foreground: 155 25% 12%;   /* deep green-charcoal */
+
   --card: 0 0% 100%;
-  --card-foreground: 140 22% 14%;
-  --card-border: 34 25% 85%;
-  
+  --card-foreground: 155 25% 12%;
+  --card-border: 155 15% 88%;
+
   --popover: 0 0% 100%;
-  --popover-foreground: 140 22% 14%;
-  --popover-border: 34 25% 85%;
-  
-  --primary: 155 43% 37%; /* deep forest green */
-  --primary-strong: 155 43% 29%; /* darker forest green */
+  --popover-foreground: 155 25% 12%;
+  --popover-border: 155 15% 88%;
+
+  --primary: 155 43% 34%;       /* rich forest green */
+  --primary-strong: 155 43% 24%;
   --primary-foreground: 0 0% 100%;
-  
-  --secondary: 25 70% 45%; /* warm copper/sienna */
+
+  --secondary: 28 72% 44%;      /* warm amber-orange */
   --secondary-foreground: 0 0% 100%;
-  
-  --muted: 140 15% 92%;
-  --muted-foreground: 140 15% 35%;
-  
-  --accent: 25 70% 45%;
+
+  --muted: 155 10% 92%;
+  --muted-foreground: 155 12% 40%;
+
+  --accent: 28 72% 44%;
   --accent-foreground: 0 0% 100%;
-  
+
   --destructive: 0 84% 60%;
   --destructive-foreground: 0 0% 100%;
-  
-  --border: 34 25% 85%;
-  --input: 34 25% 85%;
-  --ring: 155 43% 37%;
-  
-  --radius: 1rem;
+
+  --border: 155 12% 88%;
+  --input: 155 12% 88%;
+  --ring: 155 43% 34%;
+
+  --radius: 0.875rem;
 }
 
 @layer base {
@@ -96,23 +98,29 @@
   text-wrap: balance;
 }
 
+/* Sticky header glass effect */
 .glass-header {
-  background: rgba(246, 243, 238, 0.85); /* Matches warm beige */
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  background: rgba(251, 250, 247, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
 }
 
-/* Custom scrollbar for a polished feel */
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Polished scrollbar */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 8px;
 }
 ::-webkit-scrollbar-track {
   background: hsl(var(--background));
 }
 ::-webkit-scrollbar-thumb {
   background: hsl(var(--border));
-  border-radius: 5px;
+  border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
   background: hsl(var(--muted-foreground));

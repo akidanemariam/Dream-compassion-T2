@@ -1,66 +1,132 @@
+import { Link } from "wouter";
+import { Heart } from "lucide-react";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { FadeIn } from "@/components/ui/FadeIn";
-import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+
+const VALUES = [
+  {
+    title: "Dignity",
+    desc: "Respect for the people we serve—privacy, safety, and human value first.",
+    num: "01"
+  },
+  {
+    title: "Partnership",
+    desc: "Work with trusted local organizations to increase reach and reduce duplication.",
+    num: "02"
+  },
+  {
+    title: "Equity",
+    desc: "Prioritize vulnerable communities affected by conflict, poverty, and violence.",
+    num: "03"
+  },
+  {
+    title: "Accountability",
+    desc: "Communicate clearly about needs, actions, and outcomes.",
+    num: "04"
+  },
+];
+
+const TEAM = [
+  {
+    name: "Rahel Kebede",
+    initials: "RK",
+    role: "President",
+    bio: "Community volunteer active in church-based outreach and homelessness support in Chicago, including Little Brothers – Friends of the Elderly.",
+    color: "bg-emerald-100 text-emerald-800"
+  },
+  {
+    name: "Elsa Woldegarima",
+    initials: "EW",
+    role: "Treasurer",
+    bio: "15+ years in social services and case management supporting refugees and survivors of domestic violence and trafficking.",
+    color: "bg-amber-100 text-amber-800"
+  },
+  {
+    name: "Askale Berhanemeskel",
+    initials: "AB",
+    role: "Volunteer",
+    bio: "Supports families through church outreach and homeless services in Denver's Ethiopian community.",
+    color: "bg-blue-100 text-blue-800"
+  },
+  {
+    name: "Edna Aman",
+    initials: "EA",
+    role: "Board Member",
+    bio: "Bio coming soon.",
+    color: "bg-rose-100 text-rose-800"
+  },
+  {
+    name: "Henos Aman",
+    initials: "HA",
+    role: "Volunteer",
+    bio: "Bio coming soon.",
+    color: "bg-violet-100 text-violet-800"
+  },
+];
 
 export function About() {
-  const values = [
-    { title: "Dignity", desc: "Respecting the humanity of every individual." },
-    { title: "Partnership", desc: "Collaborating to multiply our impact." },
-    { title: "Equity", desc: "Ensuring resources reach marginalized groups." },
-    { title: "Accountability", desc: "Honest, clear stewardship of all funds." }
-  ];
-
-  const team = [
-    { name: "Rahel Kebede", role: "President", bio: "Rahel founded DC to bridge the gap between resources and grassroots organizations." },
-    { name: "Elsa Woldegarima", role: "Treasurer", bio: "Elsa brings years of financial stewardship to ensure every dollar maximizes impact." },
-    { name: "Askale Berhanemeskel", role: "Volunteer", bio: "Askale leads community outreach, building vital relationships with local shelters." },
-    { name: "Edna Aman", role: "Board member", bio: "Edna advises on strategic partnerships and scaling our trauma-informed care model." },
-    { name: "Henos Aman", role: "Volunteer", bio: "Henos coordinates our logistics and essential supplies distribution network." }
-  ];
-
   return (
-    <div className="flex flex-col w-full bg-background">
-      <PageHeader 
-        title="Community-led support, delivered with dignity." 
-        subtitle="Dreams Compassion was built on a simple premise: communities already have the knowledge to heal themselves—they just need the resources."
+    <div className="flex flex-col w-full">
+      <PageHeader
+        eyebrow="About"
+        title="Community-led support, delivered with dignity."
+        subtitle="We provide essentials and connect people to shelter, care, and emotional support—through community partners."
+        image="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=1600&auto=format&fit=crop"
+        imageAlt="Community volunteers gathering together"
       />
 
       {/* Mission & Vision */}
-      <section id="mission" className="py-24">
+      <section id="mission" className="py-20 md:py-28 bg-background">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="grid md:grid-cols-2 gap-12">
-            <FadeIn className="bg-white p-10 rounded-3xl shadow-sm border border-border">
-              <h2 className="text-sm font-bold tracking-widest text-secondary uppercase mb-4">Our Mission</h2>
-              <p className="text-2xl font-serif text-foreground leading-snug">
-                Provide essential support with dignity, and partner locally so help reaches people who need it most.
-              </p>
+          <div className="max-w-5xl mx-auto">
+            <FadeIn className="text-center mb-14">
+              <span className="uppercase tracking-widest text-secondary font-bold text-xs mb-3 block">Mission</span>
+              <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground">What drives us every day</h2>
             </FadeIn>
-            <FadeIn delay={0.2} className="bg-primary text-white p-10 rounded-3xl shadow-sm">
-              <h2 className="text-sm font-bold tracking-widest text-secondary uppercase mb-4">Our Vision</h2>
-              <p className="text-2xl font-serif leading-snug">
-                A world where everyone can access basic needs and build a safer future.
-              </p>
-            </FadeIn>
+
+            <div className="grid md:grid-cols-2 gap-6">
+              <FadeIn delay={0.1}>
+                <div className="relative bg-white p-10 rounded-3xl shadow-sm border border-border overflow-hidden h-full">
+                  <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary to-primary/50" />
+                  <span className="text-xs uppercase tracking-widest font-bold text-secondary mb-4 block">Our Mission</span>
+                  <p className="text-2xl font-serif text-foreground leading-snug">
+                    Provide essential support with dignity, and partner locally so help reaches people who need it most.
+                  </p>
+                </div>
+              </FadeIn>
+              <FadeIn delay={0.2}>
+                <div className="relative bg-primary text-white p-10 rounded-3xl shadow-sm overflow-hidden h-full">
+                  <div className="absolute -bottom-12 -right-12 w-48 h-48 rounded-full bg-white/5" />
+                  <div className="absolute -top-6 -left-6 w-32 h-32 rounded-full bg-secondary/10" />
+                  <span className="text-xs uppercase tracking-widest font-bold text-secondary mb-4 block relative z-10">Our Vision</span>
+                  <p className="text-2xl font-serif leading-snug relative z-10">
+                    A world where everyone can access basic needs and build a safer future.
+                  </p>
+                </div>
+              </FadeIn>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Values */}
-      <section id="values" className="py-24 bg-background-alt">
+      <section id="values" className="py-20 md:py-28 bg-background-alt border-y border-border">
         <div className="container mx-auto px-4 md:px-6">
-          <FadeIn>
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-center mb-16">Our Core Values</h2>
+          <FadeIn className="text-center mb-14">
+            <span className="uppercase tracking-widest text-secondary font-bold text-xs mb-3 block">Values</span>
+            <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground">How we show up</h2>
+            <p className="text-lg text-muted-foreground mt-3 max-w-xl mx-auto">The principles that guide our work.</p>
           </FadeIn>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {values.map((value, idx) => (
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+            {VALUES.map((value, idx) => (
               <FadeIn key={idx} delay={idx * 0.1}>
-                <Card className="h-full border-none shadow-md hover:-translate-y-1 transition-transform duration-300">
-                  <CardContent className="p-8">
-                    <div className="w-12 h-1 bg-secondary mb-6 rounded-full" />
-                    <h3 className="text-xl font-bold font-serif mb-3 text-foreground">{value.title}</h3>
-                    <p className="text-muted-foreground">{value.desc}</p>
-                  </CardContent>
-                </Card>
+                <div className="bg-white p-8 rounded-2xl border border-border shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 h-full">
+                  <span className="text-5xl font-serif font-bold text-primary/10 block mb-4 leading-none">{value.num}</span>
+                  <h3 className="text-xl font-bold font-serif text-foreground mb-3">{value.title}</h3>
+                  <p className="text-muted-foreground text-sm leading-relaxed">{value.desc}</p>
+                </div>
               </FadeIn>
             ))}
           </div>
@@ -68,34 +134,57 @@ export function About() {
       </section>
 
       {/* Leadership */}
-      <section id="leadership" className="py-24">
+      <section id="leadership" className="py-20 md:py-28 bg-background">
         <div className="container mx-auto px-4 md:px-6">
-          <FadeIn>
-            <div className="text-center max-w-2xl mx-auto mb-16">
-              <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground mb-4">Leadership & Team</h2>
-              <p className="text-lg text-muted-foreground">
-                Dedicated individuals united by a shared commitment to community service.
-              </p>
-            </div>
+          <FadeIn className="text-center mb-14">
+            <span className="uppercase tracking-widest text-secondary font-bold text-xs mb-3 block">Leadership</span>
+            <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground">People behind the work</h2>
+            <p className="text-lg text-muted-foreground mt-3 max-w-xl mx-auto">
+              Volunteers and leaders serving communities in Chicago, Denver, and beyond.
+            </p>
           </FadeIn>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {team.map((member, idx) => {
-              const initials = member.name.split(' ').map(n => n[0]).join('');
-              return (
-                <FadeIn key={idx} delay={idx * 0.1}>
-                  <div className="bg-white p-6 rounded-2xl border border-border shadow-sm flex flex-col items-center text-center h-full">
-                    <div className="w-20 h-20 rounded-full bg-primary/10 text-primary flex items-center justify-center text-2xl font-serif font-bold mb-4">
-                      {initials}
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            {TEAM.map((member, idx) => (
+              <FadeIn key={idx} delay={idx * 0.08}>
+                <div className="bg-white rounded-2xl border border-border shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden flex flex-col h-full">
+                  <div className="p-8 pb-6 flex flex-col items-center text-center">
+                    <div className={`w-20 h-20 rounded-full ${member.color} flex items-center justify-center text-2xl font-serif font-bold mb-5 ring-4 ring-white shadow-sm`}>
+                      {member.initials}
                     </div>
                     <h3 className="text-xl font-bold font-serif text-foreground mb-1">{member.name}</h3>
-                    <p className="text-secondary font-medium text-sm mb-4">{member.role}</p>
-                    <p className="text-muted-foreground text-sm">{member.bio}</p>
+                    <span className="text-xs uppercase tracking-widest font-bold text-secondary mb-4">{member.role}</span>
+                    <p className="text-muted-foreground text-sm leading-relaxed">{member.bio}</p>
                   </div>
-                </FadeIn>
-              );
-            })}
+                </div>
+              </FadeIn>
+            ))}
           </div>
+        </div>
+      </section>
+
+      {/* Connect CTA */}
+      <section className="py-20 bg-background-alt border-t border-border">
+        <div className="container mx-auto px-4 md:px-6 text-center max-w-2xl">
+          <FadeIn>
+            <span className="uppercase tracking-widest text-secondary font-bold text-xs mb-4 block">Connect</span>
+            <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground mb-4">
+              Want to partner with Dreams Compassion?
+            </h2>
+            <p className="text-lg text-muted-foreground mb-8">
+              We'd love to hear from volunteers, community organizations, and supporters.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link href="/contact">
+                <Button size="lg" className="gap-2 px-8 rounded-full">Contact us</Button>
+              </Link>
+              <Link href="/donate">
+                <Button size="lg" variant="outline" className="gap-2 px-8 rounded-full">
+                  <Heart className="w-4 h-4" /> Donate
+                </Button>
+              </Link>
+            </div>
+          </FadeIn>
         </div>
       </section>
     </div>
