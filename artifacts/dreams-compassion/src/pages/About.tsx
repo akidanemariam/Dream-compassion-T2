@@ -111,21 +111,28 @@ export function About() {
       </section>
 
       {/* Values */}
-      <section id="values" className="py-20 md:py-28 bg-background-alt border-y border-border">
-        <div className="container mx-auto px-4 md:px-6">
-          <FadeIn className="text-center mb-14">
+      <section id="values" className="relative py-12 md:py-16 border-y border-border overflow-hidden">
+        <img
+          src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?q=80&w=1600&auto=format&fit=crop"
+          alt=""
+          aria-hidden="true"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-primary/80" />
+        <div className="relative container mx-auto px-4 md:px-6">
+          <FadeIn className="text-center mb-8">
             <span className="uppercase tracking-widest text-secondary font-bold text-xs mb-3 block">Values</span>
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground">How we show up</h2>
-            <p className="text-lg text-muted-foreground mt-3 max-w-xl mx-auto">The principles that guide our work.</p>
+            <h2 className="text-3xl md:text-4xl font-serif font-bold text-white">How we show up</h2>
+            <p className="text-base text-white/70 mt-2 max-w-xl mx-auto">The principles that guide our work.</p>
           </FadeIn>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 max-w-5xl mx-auto">
             {VALUES.map((value, idx) => (
               <FadeIn key={idx} delay={idx * 0.1}>
-                <div className="bg-white p-8 rounded-2xl border border-border shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 h-full">
-                  <span className="text-5xl font-serif font-bold text-primary/10 block mb-4 leading-none">{value.num}</span>
-                  <h3 className="text-xl font-bold font-serif text-foreground mb-3">{value.title}</h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed">{value.desc}</p>
+                <div className="bg-white/10 backdrop-blur-sm border border-white/20 p-6 rounded-2xl hover:bg-white/20 transition-all duration-300 h-full">
+                  <span className="text-4xl font-serif font-bold text-secondary/60 block mb-3 leading-none">{value.num}</span>
+                  <h3 className="text-lg font-bold font-serif text-white mb-2">{value.title}</h3>
+                  <p className="text-white/70 text-sm leading-relaxed">{value.desc}</p>
                 </div>
               </FadeIn>
             ))}

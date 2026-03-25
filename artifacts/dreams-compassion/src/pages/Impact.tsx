@@ -90,8 +90,8 @@ export function Impact() {
             <FadeIn delay={0.2} className="relative">
               <div className="rounded-3xl overflow-hidden shadow-2xl aspect-[3/4]">
                 <img
-                  src="https://images.unsplash.com/photo-1593113598332-cd288d649433?q=80&w=900&auto=format&fit=crop"
-                  alt="Volunteers coordinating food distribution"
+                  src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=900&auto=format&fit=crop"
+                  alt="Community coordinators planning support outreach"
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/70 via-transparent to-transparent" />
@@ -102,29 +102,36 @@ export function Impact() {
       </section>
 
       {/* Accountability */}
-      <section id="accountability" className="py-20 md:py-28 bg-background-alt border-y border-border">
-        <div className="container mx-auto px-4 md:px-6">
-          <FadeIn className="text-center mb-14">
-            <span className="uppercase tracking-widest text-secondary font-bold text-xs mb-3 block">Accountability</span>
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground">Transparency builds trust.</h2>
-            <p className="text-lg text-muted-foreground mt-3 max-w-xl mx-auto">
+      <section id="accountability" className="relative py-12 md:py-16 border-y border-border overflow-hidden">
+        <img
+          src="https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=1600&auto=format&fit=crop"
+          alt=""
+          aria-hidden="true"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-secondary/85" />
+        <div className="relative container mx-auto px-4 md:px-6">
+          <FadeIn className="text-center mb-8">
+            <span className="uppercase tracking-widest text-white/60 font-bold text-xs mb-3 block">Accountability</span>
+            <h2 className="text-3xl md:text-4xl font-serif font-bold text-white">Transparency builds trust.</h2>
+            <p className="text-base text-white/75 mt-2 max-w-xl mx-auto">
               We share plain-language updates on what we did, who we partnered with, and what was delivered.
             </p>
           </FadeIn>
 
-          <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+          <div className="grid md:grid-cols-3 gap-5 max-w-4xl mx-auto">
             {[
               { title: "Clear updates", desc: "What was delivered, where, and through which partners." },
               { title: "Privacy and dignity", desc: "We protect sensitive details about the people we support." },
               { title: "Donor intent", desc: "We align support to the program you care about when possible." },
             ].map((card, i) => (
               <FadeIn key={i} delay={i * 0.1}>
-                <div className="bg-white p-8 rounded-2xl shadow-sm border border-border text-center hover:shadow-md hover:-translate-y-1 transition-all duration-300">
-                  <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-5">
-                    <span className="text-primary font-bold">{i + 1}</span>
+                <div className="bg-white/15 backdrop-blur-sm border border-white/25 p-6 rounded-2xl text-center hover:bg-white/25 transition-all duration-300">
+                  <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center mx-auto mb-4">
+                    <span className="text-white font-bold">{i + 1}</span>
                   </div>
-                  <h3 className="text-lg font-bold font-serif text-foreground mb-3">{card.title}</h3>
-                  <p className="text-muted-foreground text-sm">{card.desc}</p>
+                  <h3 className="text-lg font-bold font-serif text-white mb-2">{card.title}</h3>
+                  <p className="text-white/75 text-sm">{card.desc}</p>
                 </div>
               </FadeIn>
             ))}
