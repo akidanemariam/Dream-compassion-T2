@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
 import { Link, useRoute } from "wouter";
-import { Menu, X, Heart, Leaf } from "lucide-react";
+import { Menu, X, Heart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import logoSrc from "@assets/android-chrome-512x512_1774462538999.png";
 
 const NAV_LINKS = [
   { href: "/programs", label: "Programs" },
@@ -52,19 +53,13 @@ export function Header() {
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" onClick={() => setIsOpen(false)} className="flex items-center gap-3 group">
-          <div className="relative flex items-center justify-center w-10 h-10">
-            {/* Outer ring */}
-            <div className="absolute inset-0 rounded-full border-2 border-primary/30 group-hover:border-primary/60 transition-colors" />
-            {/* Inner circle */}
-            <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center shadow-sm group-hover:scale-105 transition-transform">
-              <Leaf className="w-4 h-4 text-white" strokeWidth={2.5} />
-            </div>
-          </div>
+          <img
+            src={logoSrc}
+            alt="Dreams Compassion logo"
+            className="w-11 h-11 object-contain group-hover:scale-105 transition-transform duration-200 drop-shadow-sm"
+          />
           <div className="flex flex-col leading-none">
-            <span className={cn(
-              "font-serif font-bold text-[1.1rem] transition-colors",
-              isScrolled ? "text-foreground" : "text-foreground"
-            )}>
+            <span className="font-serif font-bold text-[1.1rem] text-foreground">
               Dreams Compassion
             </span>
             <span className="text-[10px] uppercase tracking-widest text-muted-foreground font-medium mt-0.5">

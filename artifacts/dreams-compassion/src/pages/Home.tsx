@@ -106,7 +106,7 @@ export function Home() {
             <FadeIn delay={0.3} direction="left" className="relative lg:ml-auto w-full max-w-lg aspect-[4/5]">
               <div className="absolute inset-0 rounded-3xl overflow-hidden shadow-2xl">
                 <img
-                  src="https://pixabay.com/get/gc3f370cb2becbab6bfc0f59deb6127cbf132de842eb0a899011f4dbe5e6b70c2ac39b549dbeb2dfbc4630ea635a8d6d9b97043cd813bda752055012e58734d42_1280.jpg"
+                  src="https://images.unsplash.com/photo-1593113598332-cd288d649433?q=80&w=900&auto=format&fit=crop"
                   alt="Volunteer handing a box of essentials to a family member"
                   className="w-full h-full object-cover"
                 />
@@ -283,7 +283,7 @@ export function Home() {
               <FadeIn delay={0.2} className="space-y-4">
                 <div className="rounded-2xl overflow-hidden aspect-[4/5] shadow-lg">
                   <img
-                    src="https://pixabay.com/get/g7b630b442143c4b0f2ecb2b0f97b2e0bf6139c3df8953fa5b3a854c91c7f5da0f9e4781726866e68f421a7734527cfdc5ff7e52d3d6c8e68d7a32b4ef15de6bd_1280.jpg"
+                    src="https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?q=80&w=800&auto=format&fit=crop"
                     alt="Community support"
                     className="w-full h-full object-cover"
                   />
