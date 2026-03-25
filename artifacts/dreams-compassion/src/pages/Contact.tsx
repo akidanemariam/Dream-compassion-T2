@@ -39,8 +39,8 @@ export function Contact() {
         eyebrow="Contact"
         title="Volunteer, donate, or partner with us."
         subtitle="Tell us how you'd like to help—or what needs you're seeing—and we'll follow up."
-        image="https://images.unsplash.com/photo-1509099836639-18ba1795216d?q=80&w=1600&auto=format&fit=crop"
-        imageAlt="Community members connecting and supporting each other"
+        image="https://images.unsplash.com/photo-1491438590914-bc09fcaaf77a?q=80&w=1600&auto=format&fit=crop"
+        imageAlt="Diverse multiracial group of people laughing together"
       />
 
       <section className="py-20 md:py-28 bg-background">

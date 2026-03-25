@@ -11,8 +11,8 @@ export function Donate() {
         eyebrow="Donate"
         title="Turn compassion into action."
         subtitle="Your gift helps deliver essentials quickly and safely."
-        image="https://images.unsplash.com/photo-1593113598332-cd288d649433?q=80&w=1600&auto=format&fit=crop"
-        imageAlt="Volunteers handing out food and essentials"
+        image="https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?q=80&w=1600&auto=format&fit=crop"
+        imageAlt="Diverse hands joined together in community giving"
       />
 
       {/* Ways to give */}

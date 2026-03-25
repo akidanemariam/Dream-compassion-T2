@@ -87,14 +87,34 @@ export function Impact() {
               </div>
             </FadeIn>
 
-            <FadeIn delay={0.2} className="relative">
-              <div className="rounded-3xl overflow-hidden shadow-2xl aspect-[3/4]">
+            <FadeIn delay={0.2} className="flex flex-col gap-4">
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl aspect-[4/3]">
                 <img
-                  src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=900&auto=format&fit=crop"
-                  alt="Community coordinators planning support outreach"
+                  src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?q=80&w=900&auto=format&fit=crop"
+                  alt="Parent and child receiving compassionate support"
                   className="w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-primary/70 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-transparent" />
+              </div>
+              <div className="grid grid-cols-2 gap-4">
+                <div className="relative rounded-2xl overflow-hidden shadow-xl aspect-square">
+                  <img
+                    src="https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?q=80&w=600&auto=format&fit=crop"
+                    alt="Volunteers distributing food in a community"
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+                  <span className="absolute bottom-3 left-3 text-white text-xs font-bold uppercase tracking-wider">Volunteers</span>
+                </div>
+                <div className="relative rounded-2xl overflow-hidden shadow-xl aspect-square">
+                  <img
+                    src="https://images.unsplash.com/photo-1527525443983-6e60c75fff46?q=80&w=600&auto=format&fit=crop"
+                    alt="Diverse children smiling and thriving"
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+                  <span className="absolute bottom-3 left-3 text-white text-xs font-bold uppercase tracking-wider">Community</span>
+                </div>
               </div>
             </FadeIn>
           </div>
@@ -109,7 +129,7 @@ export function Impact() {
           aria-hidden="true"
           className="absolute inset-0 w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-secondary/85" />
+        <div className="absolute inset-0 bg-primary/80" />
         <div className="relative container mx-auto px-4 md:px-6">
           <FadeIn className="text-center mb-8">
             <span className="uppercase tracking-widest text-white/60 font-bold text-xs mb-3 block">Accountability</span>

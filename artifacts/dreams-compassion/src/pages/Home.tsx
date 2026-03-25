@@ -106,8 +106,8 @@ export function Home() {
             <FadeIn delay={0.3} direction="left" className="relative lg:ml-auto w-full max-w-lg aspect-[4/5]">
               <div className="absolute inset-0 rounded-3xl overflow-hidden shadow-2xl">
                 <img
-                  src="https://images.unsplash.com/photo-1610832958506-aa56368176cf?q=80&w=900&auto=format&fit=crop"
-                  alt="Fresh colorful fruits and produce"
+                  src="https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=900&auto=format&fit=crop"
+                  alt="Colorful fresh produce and fruits at a community market"
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent mix-blend-multiply" />
