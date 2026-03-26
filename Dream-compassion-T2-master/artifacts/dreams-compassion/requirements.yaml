@@ -1,0 +1,13 @@
+packages:
+  "framer-motion": "For smooth page transitions and scroll animations"
+  "clsx": "Utility for constructing className strings conditionally"
+  "tailwind-merge": "Utility function to efficiently merge Tailwind CSS classes"
+  "@hookform/resolvers": "Validation for forms"
+  "react-hook-form": "Form state management"
+  "zod": "Schema validation for contact form"
+
+images: []
+
+notes:
+  - Frontend-only site, no API integration needed
+  - Contact form relies on mailto: action as specified

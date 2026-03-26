@@ -1,0 +1,192 @@
+Here’s the **best “Describe your idea” version** specifically written for **Replit Agent** so it clearly understands what to build:
+
+---
+
+# Replit Agent — Describe Your Idea (Copy & Paste)
+
+I am redesigning a nonprofit website and I want the entire site to look more professional, modern, and engaging while keeping all the existing wording exactly the same.
+
+The main goal is to improve the **design, color scheme, layout, and overall visual quality** so the website looks like a professionally built nonprofit site that builds trust and encourages donations.
+
+I want the website to feel:
+
+* Compassionate
+* Trustworthy
+* Easy to donate
+* Easy to understand quickly
+* Modern and professional
+* More engaging and visually appealing
+* Like a lot of effort and thoughtful design went into it
+
+Major improvements needed:
+
+### 1. Visual Design Upgrade
+
+Redesign the overall UI to look more polished and professional:
+
+* Better spacing and layout
+* More intentional section design
+* Cleaner cards and components
+* Stronger visual hierarchy
+* More engaging homepage
+
+The site should not look template-based or basic. It should look like a professionally designed nonprofit website.
+
+---
+
+### 2. New Color Scheme
+
+Update the color palette to:
+
+* Background: bright warm beige / warm white
+* Primary color: deep forest green
+* Accent color: warm copper
+* Text color: near-black green charcoal
+* Highlight sections: occasional deep green bands
+* Cards: mostly solid white (not overly transparent)
+
+Improve contrast, readability, and overall visual polish.
+
+---
+
+### 3. Add Real Image Layouts (Use Placeholders for Now)
+
+Replace illustration-style visuals with layouts designed for real photography.
+
+Use placeholder image paths such as:
+
+* assets/home-hero-community.jpg (Hero image — community support)
+* assets/program-essentials.jpg (Food/essentials support)
+* assets/program-shelter.jpg (Shelter/support guidance)
+* assets/program-care.jpg (Care/emotional support)
+* assets/about-team-photo.jpg (Team/volunteers)
+* assets/impact-community.jpg (Community impact)
+* assets/donate-support.jpg (Donate page)
+* assets/contact-community.jpg (Contact page)
+
+These images should:
+
+* Be large
+* Feel documentary-style
+* Feel human and real
+* Be responsive
+* Have elegant fallback styling if missing
+
+---
+
+### 4. Improve Homepage Layout
+
+Improve the homepage structure to include:
+
+* Strong hero section
+* Clear call-to-action (Donate)
+* Impact/trust area
+* Programs section
+* How-we-work section
+* Testimonial section
+* Final CTA section
+
+Make the homepage more engaging and visually dynamic.
+
+---
+
+### 5. Improve Typography and Hierarchy
+
+* Strong serif headlines
+* Clean readable body text
+* Better heading hierarchy
+* Better spacing between sections
+* More professional visual rhythm
+
+---
+
+### 6. Improve Cards and Components
+
+Redesign:
+
+* Program cards
+* CTA sections
+* Impact blocks
+* Testimonial section
+* Footer
+
+Make them:
+
+* More modern
+* More premium
+* More visually engaging
+
+---
+
+### 7. Improve Donate Page
+
+Without changing wording:
+
+* Improve layout
+* Improve trust presentation
+* Improve CTA emphasis
+* Add image placeholder
+* Improve spacing and visual polish
+
+---
+
+### 8. Improve Impact Page
+
+Add:
+
+* Placeholder metrics
+* Impact cards
+* Case study layout (placeholder content)
+
+Make the impact page feel more concrete and professional.
+
+---
+
+### 9. Improve About Page
+
+* Better team layout
+* Add team image placeholder
+* Improve leadership section
+* Improve visual hierarchy
+
+---
+
+### 10. Improve Contact Page
+
+* Better layout
+* Improved form styling
+* Add welcoming image placeholder
+* Improve spacing and hierarchy
+
+---
+
+### 11. Global Improvements
+
+Improve:
+
+* Responsiveness
+* Accessibility
+* Spacing
+* Hover effects
+* Button styling
+* Visual consistency
+
+---
+
+IMPORTANT REQUIREMENT
+
+Do NOT change any wording in the HTML.
+Only improve design, layout, styling, and structure.
+
+---
+
+## The final result should look like a professionally designed nonprofit website that is modern, clean, engaging, and trustworthy, and clearly shows a lot of thought and effort went into the design.
+
+This is the **ideal level of clarity** for Replit Agent — it tells it:
+
+* what you want
+* what to improve
+* what not to change
+* what style to follow
+
+Once Replit builds it, send me the output and I’ll help you **polish it to a professional production level**.
