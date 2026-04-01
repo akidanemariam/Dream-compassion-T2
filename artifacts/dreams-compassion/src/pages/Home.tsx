@@ -2,6 +2,7 @@ import { Link } from "wouter";
 import { ArrowRight, Heart, HeartHandshake, Shield, Users, MapPin, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { FadeIn } from "@/components/ui/FadeIn";
+import { useDonate } from "@/context/DonateContext";
 
 const PROGRAMS = [
   {
@@ -40,6 +41,7 @@ const PROGRAMS = [
 ];
 
 export function Home() {
+  const { openDonate } = useDonate();
   return (
     <div className="flex flex-col w-full">
       {/* HERO SECTION */}
@@ -72,9 +74,7 @@ export function Home() {
               </FadeIn>
 
               <FadeIn delay={0.3} className="flex flex-wrap gap-4 mb-12">
-                <Link href="/donate">
-                  <Button size="lg" className="px-8 rounded-full">Donate Now</Button>
-                </Link>
+                <Button size="lg" className="px-8 rounded-full" onClick={() => openDonate()}>Donate Now</Button>
                 <Link href="/contact">
                   <Button size="lg" variant="outline" className="px-8 rounded-full bg-white/50 backdrop-blur-sm">Get Involved</Button>
                 </Link>
@@ -328,9 +328,7 @@ export function Home() {
               Every dollar and every volunteer hour helps us reach more families in crisis. Join us in making a direct impact.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <Link href="/donate">
-                <Button size="lg" className="w-full sm:w-auto px-8 rounded-full">Donate Now</Button>
-              </Link>
+              <Button size="lg" className="w-full sm:w-auto px-8 rounded-full" onClick={() => openDonate()}>Donate Now</Button>
               <Link href="/contact">
                 <Button size="lg" variant="outline" className="w-full sm:w-auto px-8 rounded-full">Contact us</Button>
               </Link>

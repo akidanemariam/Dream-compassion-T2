@@ -3,8 +3,10 @@ import { Heart, Repeat, Handshake, ArrowRight, CheckCircle2 } from "lucide-react
 import { PageHeader } from "@/components/ui/PageHeader";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { Button } from "@/components/ui/button";
+import { useDonate } from "@/context/DonateContext";
 
 export function Donate() {
+  const { openDonate } = useDonate();
   return (
     <div className="flex flex-col w-full">
       <PageHeader
@@ -32,8 +34,8 @@ export function Donate() {
               <div className="bg-white rounded-3xl border border-border shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 overflow-hidden h-full flex flex-col">
                 <div className="h-48 overflow-hidden">
                   <img
-                    src="https://images.unsplash.com/photo-1607082349566-187342175e2f?q=80&w=600&auto=format&fit=crop"
-                    alt="Online donation"
+                    src="https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?q=80&w=600&auto=format&fit=crop"
+                    alt="Community members giving and supporting one another"
                     className="w-full h-full object-cover"
                   />
                 </div>
@@ -43,9 +45,12 @@ export function Donate() {
                   </div>
                   <h3 className="text-xl font-bold font-serif text-foreground mb-3">Online donation</h3>
                   <p className="text-muted-foreground text-sm mb-6 flex-1">Fast, secure giving through an online donation platform.</p>
-                  <a href="#" className="inline-flex items-center justify-center gap-2 w-full bg-primary text-white font-semibold py-3 px-6 rounded-full hover:bg-primary/90 transition-colors text-sm">
+                  <button
+                    onClick={() => openDonate("one-time")}
+                    className="inline-flex items-center justify-center gap-2 w-full bg-primary text-white font-semibold py-3 px-6 rounded-full hover:bg-primary/90 transition-colors text-sm"
+                  >
                     Donate online <ArrowRight className="w-4 h-4" />
-                  </a>
+                  </button>
                 </div>
               </div>
             </FadeIn>
@@ -69,9 +74,12 @@ export function Donate() {
                   </div>
                   <h3 className="text-xl font-bold font-serif text-white mb-3">Monthly support</h3>
                   <p className="text-white/75 text-sm mb-6 flex-1">Steady giving helps us plan and respond quickly when needs arise.</p>
-                  <a href="#" className="inline-flex items-center justify-center gap-2 w-full bg-white text-primary font-semibold py-3 px-6 rounded-full hover:bg-white/90 transition-colors text-sm">
+                  <button
+                    onClick={() => openDonate("monthly")}
+                    className="inline-flex items-center justify-center gap-2 w-full bg-white text-primary font-semibold py-3 px-6 rounded-full hover:bg-white/90 transition-colors text-sm"
+                  >
                     Become a monthly donor <ArrowRight className="w-4 h-4" />
-                  </a>
+                  </button>
                 </div>
               </div>
             </FadeIn>

@@ -3,6 +3,7 @@ import { Link, useRoute } from "wouter";
 import { Menu, X, Heart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { useDonate } from "@/context/DonateContext";
 import logoSrc from "@assets/android-chrome-512x512_1774462538999.png";
 
 const NAV_LINKS = [
@@ -34,6 +35,7 @@ function NavLink({ href, label }: { href: string; label: string }) {
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const { openDonate } = useDonate();
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
@@ -75,12 +77,10 @@ export function Header() {
               <NavLink key={link.href} href={link.href} label={link.label} />
             ))}
           </ul>
-          <Link href="/donate">
-            <Button className="gap-2 rounded-full px-5">
-              <Heart className="w-3.5 h-3.5" fill="currentColor" />
-              Donate
-            </Button>
-          </Link>
+          <Button className="gap-2 rounded-full px-5" onClick={() => openDonate()}>
+            <Heart className="w-3.5 h-3.5" fill="currentColor" />
+            Donate
+          </Button>
         </nav>
 
         {/* Mobile Menu Toggle */}
@@ -110,12 +110,14 @@ export function Header() {
             ))}
           </ul>
           <div className="px-4 pb-2">
-            <Link href="/donate" onClick={() => setIsOpen(false)}>
-              <Button className="w-full gap-2 rounded-full" size="lg">
-                <Heart className="w-4 h-4" fill="currentColor" />
-                Donate Now
-              </Button>
-            </Link>
+            <Button
+              className="w-full gap-2 rounded-full"
+              size="lg"
+              onClick={() => { setIsOpen(false); openDonate(); }}
+            >
+              <Heart className="w-4 h-4" fill="currentColor" />
+              Donate Now
+            </Button>
           </div>
         </div>
       )}

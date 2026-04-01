@@ -53,14 +53,14 @@ const TEAM = [
     name: "Edna Aman",
     initials: "EA",
     role: "Board Member",
-    bio: "Bio coming soon.",
+    bio: "Brings dedicated governance and community advocacy to Dreams Compassion, helping shape the organization's strategic direction and mission impact.",
     color: "bg-rose-100 text-rose-800"
   },
   {
     name: "Henos Aman",
     initials: "HA",
     role: "Volunteer",
-    bio: "Bio coming soon.",
+    bio: "Actively serves families in need through hands-on community outreach, providing compassionate direct support and assistance to those facing hardship.",
     color: "bg-violet-100 text-violet-800"
   },
 ];

@@ -16,6 +16,8 @@ import NotFound from "@/pages/not-found";
 
 // Layout
 import { Layout } from "@/components/layout/Layout";
+import { DonateProvider } from "@/context/DonateContext";
+import { DonateModal } from "@/components/ui/DonateModal";
 
 const queryClient = new QueryClient();
 
@@ -41,10 +43,13 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
-        <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, "")}>
-          <Router />
-        </WouterRouter>
-        <Toaster />
+        <DonateProvider>
+          <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, "")}>
+            <Router />
+          </WouterRouter>
+          <DonateModal />
+          <Toaster />
+        </DonateProvider>
       </TooltipProvider>
     </QueryClientProvider>
   );
