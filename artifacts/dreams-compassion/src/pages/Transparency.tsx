@@ -79,7 +79,7 @@ export function Transparency() {
             <FadeIn delay={0.2}>
               <span className="uppercase tracking-widest text-secondary font-bold text-xs mb-4 block">Safeguarding</span>
               <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground mb-5">Safety and privacy matter</h2>
-              <p className="text-lg text-muted-foreground mb-8">We protect privacy and safety—especially for vulnerable people.</p>
+              <p className="text-lg text-muted-foreground mb-8">We protect privacy and safety, especially for vulnerable people.</p>
 
               <div className="space-y-5">
                 {[
@@ -142,7 +142,7 @@ export function Transparency() {
                 <div className="absolute -bottom-8 -left-8 w-32 h-32 rounded-full bg-secondary/10" />
                 <span className="text-8xl font-serif text-white/10 leading-none block -mt-4 mb-4">"</span>
                 <p className="text-2xl md:text-3xl font-serif font-bold leading-snug relative z-10">
-                  Transparency isn't a page—it's a practice.
+                  Transparency isn't a page, it's a practice.
                 </p>
                 <div className="mt-8 w-16 h-1 bg-secondary rounded-full" />
                 <p className="text-white/60 text-sm mt-4">Dreams Compassion</p>

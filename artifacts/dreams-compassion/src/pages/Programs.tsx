@@ -69,7 +69,7 @@ export function Programs() {
       <PageHeader
         eyebrow="Programs"
         title="Practical support, delivered through partnerships."
-        subtitle="Essentials, safety, and care—delivered with trusted local partners who know their communities."
+        subtitle="Essentials, safety, and care, delivered with trusted local partners who know their communities."
         image="https://images.unsplash.com/photo-1567427017947-545c5f8d16ad?q=80&w=1600&auto=format&fit=crop"
         imageAlt="Hands holding coins representing community change and giving"
       />

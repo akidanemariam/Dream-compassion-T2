@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 const VALUES = [
   {
     title: "Dignity",
-    desc: "Respect for the people we serve—privacy, safety, and human value first.",
+    desc: "Respect for the people we serve: privacy, safety, and human value first.",
     num: "01"
   },
   {
@@ -71,7 +71,7 @@ export function About() {
       <PageHeader
         eyebrow="About"
         title="Community-led support, delivered with dignity."
-        subtitle="We provide essentials and connect people to shelter, care, and emotional support—through community partners."
+        subtitle="We provide essentials and connect people to shelter, care, and emotional support through community partners."
         image="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=1600&auto=format&fit=crop"
         imageAlt="Community volunteers gathering together"
       />

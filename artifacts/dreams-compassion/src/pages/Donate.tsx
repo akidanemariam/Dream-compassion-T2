@@ -116,7 +116,7 @@ export function Donate() {
           <FadeIn className="text-center mb-12">
             <span className="uppercase tracking-widest text-secondary font-bold text-xs mb-3 block">Your gift in action</span>
             <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground">Support that reaches people</h2>
-            <p className="text-lg text-muted-foreground mt-3">Partner-led delivery—fast and respectful.</p>
+            <p className="text-lg text-muted-foreground mt-3">Partner-led delivery, fast and respectful.</p>
           </FadeIn>
 
           <div className="grid md:grid-cols-3 gap-4">

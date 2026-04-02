@@ -7,10 +7,6 @@ import { useDonate } from "@/context/DonateContext";
 
 const QUOTES = [
   {
-    text: "No one has ever become poor by giving.",
-    author: "Anne Frank",
-  },
-  {
     text: "We rise by lifting others.",
     author: "Robert G. Ingersoll",
   },
@@ -113,7 +109,7 @@ export function Home() {
 
               <FadeIn delay={0.2}>
                 <p className="text-base md:text-lg text-muted-foreground mb-8 leading-relaxed">
-                  We work with trusted local partners to deliver urgent support with dignity, compassion, and hope—in Chicago, Denver, and beyond.
+                  We work with trusted local partners to deliver urgent support with dignity, compassion, and hope in Chicago, Denver, and beyond.
                 </p>
               </FadeIn>
 
@@ -161,7 +157,7 @@ export function Home() {
               <div className="absolute -bottom-8 -left-8 md:-left-12 bg-white p-6 rounded-2xl shadow-xl border border-border/50 max-w-[260px]">
                 <h4 className="font-serif font-bold text-base mb-3 text-primary border-b border-border pb-2">Our Mission</h4>
                 <p className="text-sm text-foreground font-medium mb-4 italic">
-                  "Fast, safe support—always respectful."
+                  "Fast, safe support, always respectful."
                 </p>
                 <ul className="space-y-2">
                   <li className="flex gap-2 text-xs text-muted-foreground items-start">
@@ -217,7 +213,7 @@ export function Home() {
               No family should face hunger, unsafe shelter, or crisis alone.
             </h2>
             <p className="text-base md:text-lg text-muted-foreground mb-8">
-              We exist to make sure help arrives when it's needed most—through trusted partners who know their communities and serve with dignity.
+              We exist to make sure help arrives when it's needed most, through trusted partners who know their communities and serve with dignity.
             </p>
             <Link href="/about">
               <Button variant="outline" className="gap-2 rounded-full px-6">
@@ -236,7 +232,7 @@ export function Home() {
               <span className="uppercase tracking-widest text-secondary font-bold text-xs mb-4 block">Programs</span>
               <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground mb-4">What we do</h2>
               <p className="text-base md:text-lg text-muted-foreground">
-                Three focus areas—essentials, safety, and care—delivered through partners with local knowledge and trusted relationships.
+                Three focus areas: essentials, safety, and care, delivered through partners with local knowledge and trusted relationships.
               </p>
             </FadeIn>
           </div>
@@ -365,7 +361,7 @@ export function Home() {
                   "{q.text}"
                 </blockquote>
                 <cite className="block text-sm font-semibold text-secondary not-italic uppercase tracking-widest">
-                  — {q.author}
+                  {q.author}
                 </cite>
               </div>
             ))}
@@ -410,7 +406,7 @@ export function Home() {
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4 md:px-6 text-center max-w-3xl">
           <FadeIn>
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground mb-5">Help us deliver hope—today.</h2>
+            <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground mb-5">Help us deliver hope today.</h2>
             <p className="text-base md:text-lg text-muted-foreground mb-8">
               Every dollar and every volunteer hour helps us reach more families in crisis. Join us in making a direct impact.
             </p>

@@ -38,7 +38,7 @@ export function Contact() {
       <PageHeader
         eyebrow="Contact"
         title="Volunteer, donate, or partner with us."
-        subtitle="Tell us how you'd like to help—or what needs you're seeing—and we'll follow up."
+        subtitle="Tell us how you'd like to help or what needs you're seeing, and we'll follow up."
         image="https://images.unsplash.com/photo-1491438590914-bc09fcaaf77a?q=80&w=1600&auto=format&fit=crop"
         imageAlt="Diverse multiracial group of people laughing together"
       />

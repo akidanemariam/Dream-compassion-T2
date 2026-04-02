@@ -9,8 +9,8 @@ export function Impact() {
     <div className="flex flex-col w-full">
       <PageHeader
         eyebrow="Impact"
-        title="Support that reaches people—fast, safely, and respectfully."
-        subtitle="Direct assistance through trusted partners—fast and respectful."
+        title="Support that reaches people, fast, safely, and respectfully."
+        subtitle="Direct assistance through trusted partners, fast and respectful."
         image="https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?q=80&w=1600&auto=format&fit=crop"
         imageAlt="Community members receiving support"
       />
