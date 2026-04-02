@@ -1,8 +1,40 @@
+import { useState, useEffect } from "react";
 import { Link } from "wouter";
-import { ArrowRight, Heart, HeartHandshake, Shield, Users, MapPin, CheckCircle2 } from "lucide-react";
+import { ArrowRight, Heart, HeartHandshake, Shield, Users, MapPin, CheckCircle2, ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { useDonate } from "@/context/DonateContext";
+
+const QUOTES = [
+  {
+    text: "No one has ever become poor by giving.",
+    author: "Anne Frank",
+  },
+  {
+    text: "We rise by lifting others.",
+    author: "Robert G. Ingersoll",
+  },
+  {
+    text: "The best way to find yourself is to lose yourself in the service of others.",
+    author: "Mahatma Gandhi",
+  },
+  {
+    text: "Alone we can do so little; together we can do so much.",
+    author: "Helen Keller",
+  },
+  {
+    text: "Love and compassion are necessities, not luxuries. Without them, humanity cannot survive.",
+    author: "Dalai Lama",
+  },
+  {
+    text: "We make a living by what we get, but we make a life by what we give.",
+    author: "Winston Churchill",
+  },
+  {
+    text: "Act as if what you do makes a difference. It does.",
+    author: "William James",
+  },
+];
 
 const PROGRAMS = [
   {
@@ -42,6 +74,18 @@ const PROGRAMS = [
 
 export function Home() {
   const { openDonate } = useDonate();
+  const [quoteIndex, setQuoteIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setQuoteIndex((i) => (i + 1) % QUOTES.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
+
+  const prev = () => setQuoteIndex((i) => (i - 1 + QUOTES.length) % QUOTES.length);
+  const next = () => setQuoteIndex((i) => (i + 1) % QUOTES.length);
+
   return (
     <div className="flex flex-col w-full">
       {/* HERO SECTION */}
@@ -303,19 +347,62 @@ export function Home() {
         </div>
       </section>
 
-      {/* TESTIMONIAL */}
+      {/* QUOTES CAROUSEL */}
       <section className="py-20 bg-primary text-primary-foreground relative overflow-hidden">
         <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white via-transparent to-transparent" />
-        <div className="container mx-auto px-4 md:px-6 relative z-10 text-center max-w-4xl">
-          <FadeIn>
-            <Heart className="w-10 h-10 mx-auto mb-6 text-secondary" />
-            <blockquote className="text-2xl md:text-3xl font-serif font-medium leading-relaxed mb-6 text-balance">
-              "This organization helped my family when we had nowhere else to turn. They showed up with kindness, no questions asked."
-            </blockquote>
-            <cite className="block text-base font-medium text-primary-foreground/80 not-italic">
-              — Community member, Chicago
-            </cite>
-          </FadeIn>
+        <div className="container mx-auto px-4 md:px-6 relative z-10 text-center max-w-3xl">
+          <Heart className="w-10 h-10 mx-auto mb-8 text-secondary" fill="currentColor" />
+
+          <div className="relative min-h-[160px] flex flex-col items-center justify-center">
+            {QUOTES.map((q, i) => (
+              <div
+                key={i}
+                className={`absolute inset-0 flex flex-col items-center justify-center transition-all duration-700 ${
+                  i === quoteIndex ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4 pointer-events-none"
+                }`}
+              >
+                <blockquote className="text-2xl md:text-3xl font-serif font-medium leading-relaxed mb-5 text-balance">
+                  "{q.text}"
+                </blockquote>
+                <cite className="block text-sm font-semibold text-secondary not-italic uppercase tracking-widest">
+                  — {q.author}
+                </cite>
+              </div>
+            ))}
+          </div>
+
+          <div className="flex items-center justify-center gap-5 mt-10">
+            <button
+              onClick={prev}
+              aria-label="Previous quote"
+              className="w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"
+            >
+              <ChevronLeft className="w-5 h-5" />
+            </button>
+
+            <div className="flex gap-2">
+              {QUOTES.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => setQuoteIndex(i)}
+                  aria-label={`Go to quote ${i + 1}`}
+                  className={`rounded-full transition-all duration-300 ${
+                    i === quoteIndex
+                      ? "w-6 h-2 bg-secondary"
+                      : "w-2 h-2 bg-white/30 hover:bg-white/50"
+                  }`}
+                />
+              ))}
+            </div>
+
+            <button
+              onClick={next}
+              aria-label="Next quote"
+              className="w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"
+            >
+              <ChevronRight className="w-5 h-5" />
+            </button>
+          </div>
         </div>
       </section>
 
