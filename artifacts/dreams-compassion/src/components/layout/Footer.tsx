@@ -1,6 +1,7 @@
 import { Link } from "wouter";
 import { Heart } from "lucide-react";
 import { useDonate } from "@/context/DonateContext";
+import logoSrc from "@assets/android-chrome-512x512_1774462538999.png";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -13,9 +14,11 @@ export function Footer() {
           {/* Brand Column */}
           <div className="lg:col-span-1">
             <Link href="/" className="flex items-center gap-3 group mb-5 inline-flex">
-              <div className="flex items-center justify-center w-10 h-10 rounded-full bg-white text-primary font-serif font-bold text-lg shadow-md group-hover:scale-105 transition-transform">
-                DC
-              </div>
+              <img
+                src={logoSrc}
+                alt="Dreams Compassion logo"
+                className="w-10 h-10 object-contain group-hover:scale-105 transition-transform duration-200 drop-shadow-sm"
+              />
               <div className="flex flex-col">
                 <span className="font-serif font-bold text-xl leading-none text-white">
                   Dreams Compassion
