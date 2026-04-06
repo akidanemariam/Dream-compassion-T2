@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { CheckCircle2, Mail, Phone, MapPin } from "lucide-react";
+import { CheckCircle2, Mail, MapPin, Clock, MessageSquare, Users } from "lucide-react";
 
 export function Contact() {
   const [formData, setFormData] = useState({
@@ -89,8 +89,8 @@ export function Contact() {
               </div>
             </FadeIn>
 
-            {/* Right: Form */}
-            <FadeIn delay={0.2}>
+            {/* Right: Form + What happens next */}
+            <FadeIn delay={0.2} className="flex flex-col gap-6">
               <div className="bg-white p-8 md:p-10 rounded-3xl shadow-lg border border-border">
                 <h3 className="text-xl font-serif font-bold text-foreground mb-6">Send us a message</h3>
                 <form onSubmit={handleSubmit} className="space-y-5">
@@ -165,6 +165,32 @@ export function Contact() {
                     Submitting opens your email app with a pre-filled message to info@dreamscompassion.org
                   </p>
                 </form>
+              </div>
+
+              {/* What happens next */}
+              <div className="bg-background-alt rounded-3xl border border-border p-7">
+                <h4 className="font-serif font-bold text-foreground text-base mb-5">What happens next</h4>
+                <ul className="space-y-4">
+                  {[
+                    { icon: Mail, label: "We read every message", desc: "Our team reviews all inquiries personally and takes each one seriously." },
+                    { icon: Clock, label: "Response within a few days", desc: "We aim to follow up within 2 to 3 business days, sooner for urgent matters." },
+                    { icon: MessageSquare, label: "We may ask follow-up questions", desc: "To match you with the right opportunity or resource, we might reach out for a bit more context." },
+                    { icon: Users, label: "We'll connect you to the right team", desc: "Depending on your message, we'll route you to our volunteer, partner, or donor relations contact." },
+                  ].map((item, i) => {
+                    const Icon = item.icon;
+                    return (
+                      <li key={i} className="flex gap-3 items-start">
+                        <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0 mt-0.5">
+                          <Icon className="w-4 h-4" />
+                        </div>
+                        <div>
+                          <strong className="block text-sm text-foreground mb-0.5">{item.label}</strong>
+                          <span className="text-xs text-muted-foreground leading-relaxed">{item.desc}</span>
+                        </div>
+                      </li>
+                    );
+                  })}
+                </ul>
               </div>
             </FadeIn>
           </div>

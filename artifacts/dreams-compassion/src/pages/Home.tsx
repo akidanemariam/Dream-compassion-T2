@@ -323,12 +323,12 @@ export function Home() {
       </section>
 
       {/* QUOTES CAROUSEL */}
-      <section className="py-20 bg-primary text-primary-foreground relative overflow-hidden">
+      <section className="py-10 bg-primary text-primary-foreground relative overflow-hidden">
         <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white via-transparent to-transparent" />
         <div className="container mx-auto px-4 md:px-6 relative z-10 text-center max-w-3xl">
-          <Heart className="w-10 h-10 mx-auto mb-8 text-secondary" fill="currentColor" />
+          <Heart className="w-7 h-7 mx-auto mb-5 text-secondary" fill="currentColor" />
 
-          <div className="relative min-h-[160px] flex flex-col items-center justify-center">
+          <div className="relative min-h-[100px] flex flex-col items-center justify-center">
             {QUOTES.map((q, i) => (
               <div
                 key={i}
@@ -336,17 +336,17 @@ export function Home() {
                   i === quoteIndex ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4 pointer-events-none"
                 }`}
               >
-                <blockquote className="text-2xl md:text-3xl font-serif font-medium leading-relaxed mb-5 text-balance">
+                <blockquote className="text-xl md:text-2xl font-serif font-medium leading-relaxed mb-3 text-balance">
                   "{q.text}"
                 </blockquote>
-                <cite className="block text-sm font-semibold text-secondary not-italic uppercase tracking-widest">
+                <cite className="block text-xs font-semibold text-secondary not-italic uppercase tracking-widest">
                   {q.author}
                 </cite>
               </div>
             ))}
           </div>
 
-          <div className="flex items-center justify-center gap-5 mt-10">
+          <div className="flex items-center justify-center gap-5 mt-7">
             <button
               onClick={prev}
               aria-label="Previous quote"
