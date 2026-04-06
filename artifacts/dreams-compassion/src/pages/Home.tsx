@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "wouter";
-import { ArrowRight, Heart, HeartHandshake, Shield, Users, MapPin, CheckCircle2, ChevronLeft, ChevronRight } from "lucide-react";
+import { ArrowRight, Heart, HeartHandshake, Shield, Users, MapPin, ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { useDonate } from "@/context/DonateContext";
@@ -153,27 +153,6 @@ export function Home() {
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent mix-blend-multiply" />
               </div>
 
-              {/* Mission Card Overlay */}
-              <div className="absolute -bottom-8 -left-8 md:-left-12 bg-white p-6 rounded-2xl shadow-xl border border-border/50 max-w-[260px]">
-                <h4 className="font-serif font-bold text-base mb-3 text-primary border-b border-border pb-2">Our Mission</h4>
-                <p className="text-sm text-foreground font-medium mb-4 italic">
-                  "Fast, safe support, always respectful."
-                </p>
-                <ul className="space-y-2">
-                  <li className="flex gap-2 text-xs text-muted-foreground items-start">
-                    <CheckCircle2 className="w-4 h-4 text-secondary shrink-0 mt-0.5" />
-                    Partner-led delivery
-                  </li>
-                  <li className="flex gap-2 text-xs text-muted-foreground items-start">
-                    <CheckCircle2 className="w-4 h-4 text-secondary shrink-0 mt-0.5" />
-                    Dignity-first outreach
-                  </li>
-                  <li className="flex gap-2 text-xs text-muted-foreground items-start">
-                    <CheckCircle2 className="w-4 h-4 text-secondary shrink-0 mt-0.5" />
-                    Prioritize urgent needs
-                  </li>
-                </ul>
-              </div>
             </FadeIn>
 
           </div>
@@ -232,7 +211,7 @@ export function Home() {
               <span className="uppercase tracking-widest text-secondary font-bold text-xs mb-4 block">Programs</span>
               <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground mb-4">What we do</h2>
               <p className="text-base md:text-lg text-muted-foreground">
-                Three focus areas: essentials, safety, and care, delivered through partners with local knowledge and trusted relationships.
+                We mobilize community partners to reach families in crisis with the right resources at the right time, always with dignity at the center.
               </p>
             </FadeIn>
           </div>
@@ -285,7 +264,7 @@ export function Home() {
               <span className="uppercase tracking-widest text-secondary font-bold text-xs mb-4 block">How we work</span>
               <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground mb-5">Community-led, partnership-driven.</h2>
               <p className="text-base md:text-lg text-muted-foreground mb-8">
-                We coordinate with trusted local organizations so resources reach the right people quickly, safely, and without duplication.
+                We coordinate with trusted local organizations so resources reach the right people quickly and safely.
               </p>
 
               <div className="space-y-3">
@@ -295,7 +274,7 @@ export function Home() {
                   </div>
                   <div>
                     <span className="font-bold text-foreground block text-sm">Local partnership</span>
-                    <span className="text-xs text-muted-foreground">Trusted community organizations on the ground.</span>
+                    <span className="text-xs text-muted-foreground">We work with trusted community organizations already serving their neighborhoods. Their relationships and local knowledge make every delivery more effective.</span>
                   </div>
                 </div>
                 <div className="flex items-center gap-4 bg-white p-4 rounded-xl shadow-sm border border-border">
@@ -304,7 +283,7 @@ export function Home() {
                   </div>
                   <div>
                     <span className="font-bold text-foreground block text-sm">Targeted support</span>
-                    <span className="text-xs text-muted-foreground">Resources matched to specific needs and locations.</span>
+                    <span className="text-xs text-muted-foreground">Resources are matched to specific needs and locations based on referrals and real-time data. We prioritize families facing the most urgent and immediate crises.</span>
                   </div>
                 </div>
                 <div className="flex items-center gap-4 bg-white p-4 rounded-xl shadow-sm border border-border">
@@ -313,7 +292,7 @@ export function Home() {
                   </div>
                   <div>
                     <span className="font-bold text-foreground block text-sm">Transparency</span>
-                    <span className="text-xs text-muted-foreground">Clear reporting to donors and the communities we serve.</span>
+                    <span className="text-xs text-muted-foreground">We share clear, honest updates with donors and the communities we serve. Accountability strengthens trust and helps us improve how we deliver support.</span>
                   </div>
                 </div>
               </div>
