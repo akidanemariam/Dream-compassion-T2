@@ -172,21 +172,18 @@ export function Contact() {
                 <h4 className="font-serif font-bold text-foreground text-base mb-5">What happens next</h4>
                 <ul className="space-y-4">
                   {[
-                    { icon: Mail, label: "We read every message", desc: "Our team reviews all inquiries personally and takes each one seriously." },
-                    { icon: Clock, label: "Response within a few days", desc: "We aim to follow up within 2 to 3 business days, sooner for urgent matters." },
-                    { icon: MessageSquare, label: "We may ask follow-up questions", desc: "To match you with the right opportunity or resource, we might reach out for a bit more context." },
-                    { icon: Users, label: "We'll connect you to the right team", desc: "Depending on your message, we'll route you to our volunteer, partner, or donor relations contact." },
+                    { icon: Mail, label: "We read every message" },
+                    { icon: Clock, label: "Response within a few days" },
+                    { icon: MessageSquare, label: "We may ask follow-up questions" },
+                    { icon: Users, label: "We'll connect you to the right team" },
                   ].map((item, i) => {
                     const Icon = item.icon;
                     return (
-                      <li key={i} className="flex gap-3 items-start">
-                        <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0 mt-0.5">
+                      <li key={i} className="flex gap-3 items-center">
+                        <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0">
                           <Icon className="w-4 h-4" />
                         </div>
-                        <div>
-                          <strong className="block text-sm text-foreground mb-0.5">{item.label}</strong>
-                          <span className="text-xs text-muted-foreground leading-relaxed">{item.desc}</span>
-                        </div>
+                        <strong className="text-sm text-foreground">{item.label}</strong>
                       </li>
                     );
                   })}
