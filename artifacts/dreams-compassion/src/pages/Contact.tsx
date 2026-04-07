@@ -80,11 +80,11 @@ export function Contact() {
                   </div>
                   <span className="font-medium">info@dreamscompassion.org</span>
                 </a>
-                <div className="flex items-center gap-3 text-muted-foreground">
+                <div className="flex items-center gap-3 text-foreground">
                   <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">
                     <MapPin className="w-4 h-4" />
                   </div>
-                  <span>Chicago, Denver, and beyond</span>
+                  <span className="font-medium">Chicago, Denver, and beyond</span>
                 </div>
               </div>
             </FadeIn>

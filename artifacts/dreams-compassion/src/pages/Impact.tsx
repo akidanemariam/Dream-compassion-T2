@@ -218,7 +218,7 @@ export function Impact() {
           <FadeIn>
             <span className="uppercase tracking-widest text-secondary font-bold text-xs mb-4 block">Support</span>
             <h2 className="text-3xl font-serif font-bold text-foreground mb-4">Your support fuels direct action.</h2>
-            <p className="text-lg text-muted-foreground mb-8">Make a donation or connect with us to explore partnerships.</p>
+            <p className="text-lg text-muted-foreground mb-8">Make a donation or connect with us to explore partnerships. Every contribution moves directly through trusted local channels to reach families in urgent need. Whether you give time, resources, or reach, your involvement creates real change in real communities.</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/donate">
                 <Button size="lg" className="px-8 rounded-full">Donate</Button>

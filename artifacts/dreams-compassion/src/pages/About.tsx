@@ -179,7 +179,7 @@ export function About() {
               Want to partner with Dreams Compassion?
             </h2>
             <p className="text-lg text-muted-foreground mb-8">
-              We'd love to hear from volunteers, community organizations, and supporters.
+              We'd love to hear from volunteers, community organizations, and supporters. Whether you're interested in volunteering your time, forming a formal partnership, or simply learning more about how we work, every connection strengthens our ability to reach more families. Reach out and let us know how you'd like to be part of the mission.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/contact">

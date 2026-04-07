@@ -96,7 +96,7 @@ export function Home() {
               <FadeIn>
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary/10 text-secondary font-medium text-sm mb-6 border border-secondary/20">
                   <span className="w-2 h-2 rounded-full bg-secondary animate-pulse" />
-                  Nonprofit • Community partnerships • Direct support
+                  Nonprofit
                 </div>
               </FadeIn>
 
@@ -192,7 +192,7 @@ export function Home() {
               No family should face hunger, unsafe shelter, or crisis alone.
             </h2>
             <p className="text-base md:text-lg text-muted-foreground mb-8">
-              We exist to make sure help arrives when it's needed most, through trusted partners who know their communities and serve with dignity.
+              We exist to make sure help arrives when it's needed most, through trusted partners who know their communities and serve with dignity. Behind every delivery is a relationship built on trust. Because when people are at their most vulnerable, how help is given matters just as much as the help itself.
             </p>
             <Link href="/about">
               <Button variant="outline" className="gap-2 rounded-full px-6">
